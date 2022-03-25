@@ -7,7 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<AssessmentTemplateModel> fetchAssement() async {
-  var url = "http://127.0.0.1:8000/flexio/assessments/2/";
+  // var url = "http://127.0.0.1:8000/flexio/assessments/2/";
+
+  var url = Uri(
+      scheme: 'http', host: '127.0.0.1:8000/', path: 'flexio/assessments/2/');
 
   var response = await http.get(url, headers: {
     'Authorization': 'Token d57fced7f50f3d333872fb37524d7713ac14d5ea',

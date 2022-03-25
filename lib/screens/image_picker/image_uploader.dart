@@ -16,8 +16,13 @@ class UploadImageDemo extends StatefulWidget {
 }
 
 class UploadImageDemoState extends State<UploadImageDemo> {
-  static final String uploadEndPoint =
-      'http://localhost/flutter_test/upload_image.php';
+  // static final String uploadEndPoint =
+  //     'http://localhost/flutter_test/upload_image.php';
+
+  static final uploadEndPoint = Uri(
+      scheme: 'http',
+      host: 'localhost/',
+      path: 'flutter_test/upload_image.php');
   Future<File> file;
   String status = '';
   String base64Image;

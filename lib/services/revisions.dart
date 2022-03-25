@@ -6,7 +6,7 @@ import 'package:flex/models/assessment_template_model.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<AssessmentTemplateModel>> fetchAssement(String token) async {
-  var url = ApiConnect.baseUrl + "flexio/assessments/2/";
+  var url = ApiConnect.url;
 
   print("object" + token);
   var response = await http.get(url, headers: {

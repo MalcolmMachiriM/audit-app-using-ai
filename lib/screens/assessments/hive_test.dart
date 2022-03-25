@@ -28,8 +28,22 @@ class _OfflineAccessState extends State<OfflineAccess> {
 
   Future<bool> getAllData() async {
     await openBox();
+// class ApiConnect {
+//   // static const baseUrl = 'http://ec2-13-244-138-73.af-south-1.compute.amazonaws.com/';
+//   static const baseUrl = 'http://192.168.40.224:8000/';
+//   static const authTokenUrl = baseUrl + 'api-token-auth/';
+//   static const acceptType = 'application/json';
+//   static const contentType = 'application/json';
+//   static const getAssessmentUrl = baseUrl + 'flexio/assessments/';
+//   static const postAssessmentUrl = baseUrl + 'flexio/assessments/upload/';
+// }
 
-    var url = ApiConnect.getAssessmentUrl + "1/";
+    // var url = ApiConnect.getAssessmentUrl + "1/";
+    Uri uri;
+    var url = Uri(
+        scheme: 'http',
+        host: '192.168.40.224:8000/',
+        path: 'flexio/assessments/1/');
 
     var authToken = await AuthenticationController().retrieveAuthToken();
     try {
@@ -56,7 +70,11 @@ class _OfflineAccessState extends State<OfflineAccess> {
   }
 
   Future<void> refreshData() async {
-    var url = ApiConnect.getAssessmentUrl + "1/";
+    // var url = ApiConnect.getAssessmentUrl + "1/";
+    var url = Uri(
+        scheme: 'http',
+        host: '192.168.40.224:8000/',
+        path: 'flexio/assessments/1/');
 
     var authToken = await AuthenticationController().retrieveAuthToken();
     try {
@@ -103,7 +121,6 @@ class _OfflineAccessState extends State<OfflineAccess> {
           ),
         ],
       ),
-      
       body: Center(
         child: FutureBuilder(
           future: getAllData(),
@@ -182,10 +199,9 @@ class _OfflineAccessState extends State<OfflineAccess> {
                                               activeColor: Colors.purple[600],
                                               activeTrackColor:
                                                   Colors.purple[600],
-                                              inactiveTrackColor:
-                                                  Colors.purple.withOpacity(0.5),
-                                              inactiveThumbColor:
-                                                  Colors.white,
+                                              inactiveTrackColor: Colors.purple
+                                                  .withOpacity(0.5),
+                                              inactiveThumbColor: Colors.white,
                                               focusColor: Colors.purple[400]
                                                   .withOpacity(0.5),
 

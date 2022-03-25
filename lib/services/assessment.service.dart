@@ -12,11 +12,11 @@ class AssessmentAPIService {
       "Authorization": "Token " + authToken,
     };
 
-    return await http.post(ApiConnect.postAssessmentUrl,
+    return await http.post(ApiConnect.url,
         headers: headers, body: json.encode(assessmentDetails));
   }
 
-    static Future<http.Response> get() async {
+  static Future<http.Response> get() async {
     var authToken = await AuthenticationController().retrieveAuthToken();
     final headers = {
       "accept": ApiConnect.acceptType,
@@ -24,7 +24,6 @@ class AssessmentAPIService {
       "Authorization": "Token " + authToken,
     };
 
-    return await http.get(ApiConnect.getAssessmentUrl + "1/",
-        headers: headers);
+    return await http.get(ApiConnect.url1, headers: headers);
   }
 }
