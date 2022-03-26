@@ -163,7 +163,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     Provider.of<AppState>(context, listen: false).getRecentAudits();
   }
 
-  Future login()
+  login()
   // async
   {
     // await
