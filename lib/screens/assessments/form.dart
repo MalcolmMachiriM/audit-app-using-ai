@@ -3,7 +3,6 @@ import 'package:flex/models/section_model.dart';
 import 'package:flex/providers/app_state.dart';
 import 'package:flex/themes/style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class FlexForm extends StatefulWidget {

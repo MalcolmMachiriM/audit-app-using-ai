@@ -163,21 +163,26 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     Provider.of<AppState>(context, listen: false).getRecentAudits();
   }
 
-  Future login() async {
-    await EasyLoading.show(
+  Future login()
+  // async
+  {
+    // await
+    EasyLoading.show(
       status: 'loading...',
     );
 
-    _futureLogin =
-        await AuthenticationController().logIn(username.text, password.text);
+    // _futureLogin =
+    // await AuthenticationController().logIn(username.text, password.text);
 
-    if (!!_futureLogin) {
-      await EasyLoading.showError('Invalid', duration: Duration(seconds: 2));
-    } else {
-      await EasyLoading.showSuccess("Success", duration: Duration(seconds: 2));
-      initStorage();
-      Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
-    }
+    // if (!_futureLogin) {
+    //   await EasyLoading.showError('Invalid', duration: Duration(seconds: 2));
+    // } else {
+    //   await EasyLoading.showSuccess("Success", duration: Duration(seconds: 2));
+    //   initStorage();
+    //   Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
+    // }
+
+    Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
 
     EasyLoading.dismiss();
   }

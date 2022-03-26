@@ -10,7 +10,6 @@ import 'package:flex/screens/components/flex_text_form_field.dart';
 import 'package:flex/screens/image_picker/image.controller.dart';
 import 'package:flex/providers/app_state.dart';
 import 'package:flex/themes/style.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
