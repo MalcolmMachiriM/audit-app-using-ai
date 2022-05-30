@@ -35,11 +35,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             Positioned(
               top: 100,
               right: 0,
-              left: 0,
+              left: 100,
               child: Container(
                 height: 50,
                 width: 80,
-                child: Image.asset('images/flex_logo.png'),
+                child: Text(
+                  'Audit app using AI',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                // Image.asset('images/flex_logo.png'),
               ),
             ),
             buildBottomHalfContainer(true),

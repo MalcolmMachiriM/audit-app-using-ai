@@ -23,9 +23,6 @@ class FlexBasicCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slidable(
-      // showAllActionsThreshold: 0.5,
-      // actionPane: SlidableScrollActionPane(),
-      // actionExtentRatio: 1 / 9,
       child: Card(
         margin: EdgeInsets.only(top: 24, bottom: 8),
         child:
@@ -53,41 +50,33 @@ class FlexBasicCard extends StatelessWidget {
           ),
         ]),
       ),
-      // secondaryActions: <Widget>[
-      //   SlideAction(
-      //     onTap: this.morePress,
-      //     child: FlexIconButton(
-      //       borderColor: Color(0XFFA2A2A2), // Could make this concrete since
-      //       //its the same for all icons and is being repeated below
-      //       iconColor: Color(0XFF00A500),
-      //       icon: Icons.info,
-      //     ),
-      //   ),
-      //   SlideAction(
-      //     onTap: this.editPress,
-      //     child: FlexIconButton(
-      //       borderColor: Color(0XFFA2A2A2), //DRY DRY DRY
-      //       iconColor: Color(0XFFA2A2A2), //DRY DRY DRY
-      //       icon: Icons.edit,
-      //     ),
-      //   ),
-      //   SlideAction(
-      //     onTap: this.morePress,
-      //     child: FlexIconButton(
-      //       borderColor: Color(0XFFA2A2A2),
-      //       iconColor: Color(0XFFA2A2A2),
-      //       icon: Icons.near_me,
-      //     ),
-      //   ),
-      //   SlideAction(
-      //     onTap: this.deletePress,
-      //     child: FlexIconButton(
-      //       borderColor: Color(0XFFA2A2A2),
-      //       iconColor: Color(0XFFA2A2A2),
-      //       icon: Icons.delete,
-      //     ),
-      //   ),
-      // ],
+      endActionPane: ActionPane(motion: ScrollMotion(), children: [
+        FlexIconButton(
+          borderColor: Color(0XFFA2A2A2), // Could make this concrete since
+          //its the same for all icons and is being repeated below
+          iconColor: Color(0XFF00A500),
+          icon: Icons.info,
+        ),
+        FlexIconButton(
+          borderColor: Color(0XFF95989D),
+          icon: Icons.edit,
+          iconColor: Color.fromARGB(255, 24, 24, 24),
+          scaleFactor: 35,
+          press: editPress,
+        ),
+        // FlexIconButton(
+        //   borderColor: Color(0XFFA2A2A2),
+        //   iconColor: Color(0XFFA2A2A2),
+        //   icon: Icons.near_me,
+        // ),
+        FlexIconButton(
+          borderColor: Color(0XFF95989D),
+          icon: Icons.delete,
+          iconColor: Colors.red,
+          scaleFactor: 35,
+          press: deletePress,
+        ),
+      ]),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:provider/provider.dart';
+import '../../constants/routing_constants.dart';
 import '../components/flex_buttons.dart';
 import 'floor_plan/show_floor_plan.dart';
 
@@ -36,7 +37,7 @@ class _BuildNewProjectState extends State<BuildNewProject> {
                     child: Container(
                       padding: EdgeInsets.only(left: 120),
                       child: Text(
-                        'New Project',
+                        'New Audit',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16),
                       ),
@@ -64,27 +65,27 @@ class _BuildNewProjectState extends State<BuildNewProject> {
                   labelText: 'Project Info',
                   controller: projectInfo,
                   context: context),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text('Do you want to add floor plan?'),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Transform.scale(
-                    scale: 0.6,
-                    child: CupertinoSwitch(
-                      activeColor: Theme.of(context).primaryColor,
-                      value: _switchValue,
-                      onChanged: (bool value) {
-                        setState(() {
-                          _switchValue = value;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     Text('Do you want to add floor plan?'),
+              //     SizedBox(
+              //       width: 20,
+              //     ),
+              //     Transform.scale(
+              //       scale: 0.6,
+              //       child: CupertinoSwitch(
+              //         activeColor: Theme.of(context).primaryColor,
+              //         value: _switchValue,
+              //         onChanged: (bool value) {
+              //           setState(() {
+              //             _switchValue = value;
+              //           });
+              //         },
+              //       ),
+              //     ),
+              //   ],
+              // ),
               SizedBox(
                 height: 20,
               ),
@@ -124,15 +125,18 @@ class _BuildNewProjectState extends State<BuildNewProject> {
 
                               Navigator.pop(context);
 
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      ShowFloorPlan(
-                                    switchvalue: _switchValue,
-                                  ),
-                                ),
-                              );
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (BuildContext context) =>
+                              //         ShowFloorPlan(
+                              //       switchvalue: _switchValue,
+                              //     ),
+                              //   ),
+                              // );
+
+                              Navigator.pushNamed(context,
+                                  RoutingConstants.flexCameraDetection);
                             } on Exception catch (e) {
                               EasyLoading.showError(e.toString());
                             }

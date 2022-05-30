@@ -3,7 +3,6 @@
 import 'package:flex/constants/routing_constants.dart';
 import 'package:flex/models/assessment_model.dart';
 import 'package:flex/providers/project_provider.dart';
-import 'package:flex/screens/assessments/assessment_form.dart';
 import 'package:flex/screens/authentication/login.dart';
 import 'package:flex/screens/components/flex_basic_card.dart';
 import 'package:flex/screens/components/flex_dashboard_text.dart';
@@ -14,8 +13,6 @@ import 'package:flex/screens/image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
-import '../side_bar.dart';
 
 class FlexBasicDashboard extends StatefulWidget {
   const FlexBasicDashboard({Key key}) : super(key: key);
@@ -52,9 +49,9 @@ class _FlexBasicDashboardState extends State<FlexBasicDashboard> {
                 width: 100.0,
                 decoration: BoxDecoration(
                   color: Theme.of(context).primaryColor,
-                  image: DecorationImage(
-                    image: AssetImage('images/flex_logo.png'),
-                  ),
+                  // image: DecorationImage(
+                  //   image: AssetImage('images/flex_logo.png'),
+                  // ),
                 ),
               ),
               Divider(),
@@ -79,11 +76,11 @@ class _FlexBasicDashboardState extends State<FlexBasicDashboard> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Image.asset(
-          'images/flex_logo.png',
-          fit: BoxFit.cover,
-          height: 30,
-        ),
+        // title: Image.asset(
+        //   'images/flex_logo.png',
+        //   fit: BoxFit.cover,
+        //   height: 30,
+        // ),
         actions: [
           Padding(
             padding: const EdgeInsets.all(10.0),

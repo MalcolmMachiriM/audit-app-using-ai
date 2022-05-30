@@ -4,7 +4,6 @@ import 'package:flex/models/assessment_template_model.dart';
 import 'package:flex/models/inventory.dart';
 import 'package:flex/models/section_model.dart';
 import 'package:flex/providers/project_provider.dart';
-import 'package:flex/screens/assessments/form.dart';
 import 'package:flex/screens/components/flex_add_item_widget.dart';
 import 'package:flex/screens/components/flex_buttons.dart';
 import 'package:flex/screens/components/flex_dashboard_text.dart';
@@ -20,6 +19,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import 'data_field_input.dart';
 import 'flex_camera_preview.dart';
 
 class FlexCameraDetection extends StatefulWidget {
@@ -225,12 +225,12 @@ class _FlexCameraDetectionState extends State<FlexCameraDetection> {
                                           ),
                                           onPressed: () {
                                             setState(() {
-                                              //   activeSection = !activeSection;
-                                              // _rawSection.toSet().toList();
-                                              // Provider.of<Project>(context,
-                                              //         listen: false)
-                                              //     .sections[currentIndex]
-                                              //     .fields = _rawSection;
+                                              activeSection = !activeSection;
+                                              _rawSection.toSet().toList();
+                                              Provider.of<Project>(context,
+                                                      listen: false)
+                                                  .sections[currentIndex]
+                                                  .fields = _rawSection;
 
                                               currentIndex = index;
                                               currentSection = _sections[index];
@@ -664,51 +664,6 @@ class _FlexCameraDetectionState extends State<FlexCameraDetection> {
             onChanged: onchanged),
         Text(labelText, style: TextStyle(fontSize: 12))
       ],
-    );
-  }
-}
-
-class FlexDatafieldInput extends StatefulWidget {
-  final Fields field;
-  final TextEditingController controller;
-  const FlexDatafieldInput(
-      {Key key, @required this.field, @required this.controller})
-      : super(key: key);
-
-  @override
-  _FlexDatafieldInputState createState() => _FlexDatafieldInputState();
-}
-
-class _FlexDatafieldInputState extends State<FlexDatafieldInput> {
-  var visible = false;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          FlexTextFormField(
-            labelText: widget.field.prompt,
-            controller: widget.controller,
-            onEditingComplete: () {
-              if ("yes" == widget.controller.text) {
-                setState(() {
-                  visible = true;
-                });
-              } else {
-                setState(() {
-                  visible = false;
-                });
-              }
-            },
-          ),
-          Visibility(
-            visible: visible,
-            child: FlexTextFormField(
-              labelText: widget.field.prompt,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

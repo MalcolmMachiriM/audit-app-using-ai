@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'dart:convert';
-import 'package:flex/constants/api.dart';
 import 'package:flex/screens/authentication/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -39,7 +38,6 @@ class _OfflineAccessState extends State<OfflineAccess> {
 // }
 
     // var url = ApiConnect.getAssessmentUrl + "1/";
-    Uri uri;
     var url = Uri(
         scheme: 'http',
         host: '192.168.40.224:8000/',
