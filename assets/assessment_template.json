@@ -15,22 +15,22 @@
         "section": [
             {
                 "id": 1,
-                "section_name": "Site Information",
-                "description": "Site Information",
+                "section_name": "Board Room",
+                "description": "Board Room",
                 "floor_plan": null,
                 "repeatable": null,
                 "inventory": null,
                 "fields": [
                     {
-                        "prompt": "Business name",
+                        "prompt": "Is there A TV?",
                         "data_type": 1,
                         "range": null,
                         "link": null,
                         "follow_up_question": {
-                            "name": "Is the yard fenced, walled or gated?",
+                            "name": "Is there an exit sign?",
                             "follow_up": [
                                 {
-                                    "prompt": "Name the type",
+                                    "prompt": "Is it red",
                                      "trigger_answer": "yes",
                                     "data_type": 1
                                 },
@@ -109,19 +109,19 @@
             },
             {
                 "id": 2,
-                "section_name": "Description of Site and Loss Event",
-                "description": "Description of Risk",
+                "section_name": "Reception",
+                "description": "Reception",
                 "floor_plan": null,
                 "repeatable": null,
                 "inventory": null,
                 "fields": [
                     {
-                        "prompt": "Please describe the building or site",
+                        "prompt": "Please describe the room",
                         "data_type": 3,
                         "range": null,
                         "link": null,
                         "follow_up_question": {
-                            "name": "Is the yard fenced, walled or gated?",
+                            "name": "Is there a sitting area",
                             "follow_up": [
                                 {
                                     "prompt": "Name the type",
@@ -137,12 +137,12 @@
                         }
                     },
                     {
-                        "prompt": "Please describe what the building is used for",
+                        "prompt": "Are there windows",
                         "data_type": 3,
                         "range": null,
                         "link": null,
                         "follow_up_question": {
-                            "name": "Is the yard fenced, walled or gated?",
+                            "name": "Are they broken",
                             "follow_up": [
                                 {
                                     "prompt": "Name the type",
@@ -203,8 +203,8 @@
             },
             {
                 "id": 3,
-                "section_name": "Security & Protection",
-                "description": "Security & Protection",
+                "section_name": "Pool Office",
+                "description": "Pool Office",
                 "floor_plan": null,
                 "repeatable": null,
                 "inventory": null,
@@ -266,19 +266,19 @@
             },
             {
                 "id": 4,
-                "section_name": "Fire Protection",
-                "description": "Fire Protection",
+                "section_name": "GM Office",
+                "description": "GM Office",
                 "floor_plan": null,
                 "repeatable": null,
                 "inventory": null,
                 "fields": [
                     {
-                        "prompt": "Does the building have fire extinguishers",
+                        "prompt": "Does it have burglar bars",
                         "data_type": 2,
                         "range": null,
                         "link": null,
                         "follow_up_question": {
-                            "name": "Is the yard fenced, walled or gated?",
+                            "name": "Does it have multiple entrances",
                             "follow_up": [
                                 {
                                     "prompt": "Name the type",
@@ -376,8 +376,8 @@
             },
             {
                 "id": 5,
-                "section_name": "Building Characteristics",
-                "description": "Building Characteristics",
+                "section_name": "Sales Office",
+                "description": "Sales Office",
                 "floor_plan": null,
                 "repeatable": null,
                 "inventory": null,
@@ -544,19 +544,19 @@
             },
             {
                 "id": 6,
-                "section_name": "Security",
-                "description": "Security",
+                "section_name": "Server Room",
+                "description": "Server Room",
                 "floor_plan": null,
                 "repeatable": null,
                 "inventory": null,
                 "fields": [
                     {
-                        "prompt": "Is the property fenced, walled or gated?",
+                        "prompt": "Is there air conditioner",
                         "data_type": 1,
                         "range": null,
                         "link": null,
                         "follow_up_question": {
-                            "name": "Is the property fenced, walled or gated?",
+                            "name": "Is there protection for servers",
                             "follow_up": [
                                 {
                                     "prompt": "Name the type",
@@ -612,8 +612,8 @@
             },
             {
                 "id": 7,
-                "section_name": "High Value Items",
-                "description": "High Value Items",
+                "section_name": "Finance Office",
+                "description": "Finance Office",
                 "floor_plan": null,
                 "repeatable": null,
                 "inventory": null,
