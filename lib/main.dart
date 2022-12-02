@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flex IO',
       theme: appTheme(),
-      initialRoute: RoutingConstants.login,
+      initialRoute: RoutingConstants.onboarding,
       onGenerateRoute: RouteGenerator.generateRoute,
       builder: EasyLoading.init(),
     );

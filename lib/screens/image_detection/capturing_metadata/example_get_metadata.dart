@@ -26,7 +26,7 @@ class _LocationAppState extends State<LocationApp> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Flex"),
-        backgroundColor: Colors.purple,
+        backgroundColor: Color(0xFFF72670),
       ),
       body: Center(
         child: Container(
@@ -48,7 +48,9 @@ class _LocationAppState extends State<LocationApp> {
               ),
               SizedBox(height: 20),
               TextButton(
-                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue[800])),
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Color(0xFFF72670))),
                 onPressed: () async {
                   locationMessage = await Metadata().getCurrentLocation();
                   time = Metadata().getTime();
