@@ -10,7 +10,6 @@ import 'binding_box.dart';
 const String ssd = "SSD MobileNet";
 
 class ModelSelection extends StatefulWidget {
-
   final List<CameraDescription> cameras;
 
   ModelSelection(this.cameras);
@@ -86,12 +85,13 @@ class _ModelSelectionState extends State<ModelSelection> {
                   setRecognitions,
                 ),
                 BindingBox(
-                    _recognitions == null ? [] : _recognitions,
-                    math.max(_imageHeight, _imageWidth),
-                    math.min(_imageHeight, _imageWidth),
-                    screen.height,
-                    screen.height,
-                    context, ),
+                  _recognitions == null ? [] : _recognitions,
+                  math.max(_imageHeight, _imageWidth),
+                  math.min(_imageHeight, _imageWidth),
+                  screen.height,
+                  screen.width,
+                  context,
+                ),
               ],
             ),
     );

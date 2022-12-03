@@ -174,21 +174,28 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     EasyLoading.show(
       status: 'loading...',
     );
+    if (username.text != 'malcolm@gmail.com' || password.text != '12345678') {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        backgroundColor: Colors.red,
+        content: Text("Credentials wrong"),
+      ));
+      EasyLoading.dismiss();
+    } else {
+      // _futureLogin =
+      // await AuthenticationController().logIn(username.text, password.text);
 
-    // _futureLogin =
-    // await AuthenticationController().logIn(username.text, password.text);
+      // if (!_futureLogin) {
+      //   await EasyLoading.showError('Invalid', duration: Duration(seconds: 2));
+      // } else {
+      //   await EasyLoading.showSuccess("Success", duration: Duration(seconds: 2));
+      //   initStorage();
+      //   Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
+      // }
 
-    // if (!_futureLogin) {
-    //   await EasyLoading.showError('Invalid', duration: Duration(seconds: 2));
-    // } else {
-    //   await EasyLoading.showSuccess("Success", duration: Duration(seconds: 2));
-    //   initStorage();
-    //   Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
-    // }
+      Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
 
-    Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
-
-    EasyLoading.dismiss();
+      EasyLoading.dismiss();
+    }
   }
 
   Widget buildTextField(String hintText, String labelText, bool isPassword,
