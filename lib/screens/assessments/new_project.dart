@@ -65,27 +65,27 @@ class _BuildNewProjectState extends State<BuildNewProject> {
                   labelText: 'Project Info',
                   controller: projectInfo,
                   context: context),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     Text('Do you want to add floor plan?'),
-              //     SizedBox(
-              //       width: 20,
-              //     ),
-              //     Transform.scale(
-              //       scale: 0.6,
-              //       child: CupertinoSwitch(
-              //         activeColor: Theme.of(context).primaryColor,
-              //         value: _switchValue,
-              //         onChanged: (bool value) {
-              //           setState(() {
-              //             _switchValue = value;
-              //           });
-              //         },
-              //       ),
-              //     ),
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Do you want to add floor plan?'),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Transform.scale(
+                    scale: 0.6,
+                    child: CupertinoSwitch(
+                      activeColor: Theme.of(context).primaryColor,
+                      value: _switchValue,
+                      onChanged: (bool value) {
+                        setState(() {
+                          _switchValue = value;
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(
                 height: 20,
               ),
@@ -125,15 +125,15 @@ class _BuildNewProjectState extends State<BuildNewProject> {
 
                               Navigator.pop(context);
 
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (BuildContext context) =>
-                              //         ShowFloorPlan(
-                              //       switchvalue: _switchValue,
-                              //     ),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      ShowFloorPlan(
+                                    switchvalue: _switchValue,
+                                  ),
+                                ),
+                              );
 
                               Navigator.pushNamed(context,
                                   RoutingConstants.flexCameraDetection);
@@ -162,9 +162,9 @@ class _BuildNewProjectState extends State<BuildNewProject> {
 
     var assessmentModel = projectProvider.project;
     assessmentModel.description = projectName.text;
-    assessmentModel.createdBy = "Blessing";
+    assessmentModel.createdBy = "Mali";
     assessmentModel.dateCompleted = DateTime.now().toString();
-    assessmentModel.organisationId = "SASRIA";
+    assessmentModel.organisationId = "MSU";
     projectProvider.saveProject(assessmentModel);
   }
 

@@ -1,13 +1,13 @@
 [
     {
         "id": 1,
-        "name": "SASRIA",
-        "description": "SASRIA - Crawford Loss Adjustor Audit v4",
+        "name": "MSU",
+        "description": "MSU - Crawford Loss Adjustor Audit v4",
         "created_by": {
             "username": "admin"
         },
         "organization": {
-            "name": "SASRIA"
+            "name": "MSU"
         },
         "published": true,
         "date_created": "2021-10-05T10:43:45.387957Z",
@@ -22,7 +22,7 @@
                 "inventory": null,
                 "fields": [
                     {
-                        "prompt": "Is there A TV?",
+                        "prompt": "Is everything accouted for?",
                         "data_type": 1,
                         "range": null,
                         "link": null,
@@ -43,7 +43,7 @@
                         }
                     },
                     {
-                        "prompt": "Date of loss",
+                        "prompt": "Are there breakages",
                         "data_type": 4,
                         "range": null,
                         "link": null,

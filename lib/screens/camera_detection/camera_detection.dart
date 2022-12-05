@@ -29,10 +29,16 @@ class FlexCameraDetection extends StatefulWidget {
   _FlexCameraDetectionState createState() => _FlexCameraDetectionState();
 }
 
+Section currentSection;
+var datafields = currentSection.fields;
+
+List<TextEditingController> controllers =
+    List.generate(datafields.length, (index) => TextEditingController());
+
 class _FlexCameraDetectionState extends State<FlexCameraDetection> {
   List<Items> _items = [];
   List _sections = [];
-  Section currentSection;
+  // Section currentSection;
   int currentIndex = 0;
   bool activeSection = false;
   Future<File> file;
@@ -475,11 +481,11 @@ class _FlexCameraDetectionState extends State<FlexCameraDetection> {
 
   List<Widget> _buildTemplateDataFields() {
     List<Widget> fieldWidgets = [];
-    var datafields = currentSection.fields;
+    // var datafields = currentSection.fields;
 
     if (datafields.isEmpty) return [];
-    List<TextEditingController> controllers =
-        List.generate(datafields.length, (index) => TextEditingController());
+    // List<TextEditingController> controllers =
+    //     List.generate(datafields.length, (index) => TextEditingController());
     datafields?.forEach(
       (field) {
         var question = field.prompt;

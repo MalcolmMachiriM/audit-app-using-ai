@@ -247,29 +247,29 @@ class _ShowFloorPlanState extends State<ShowFloorPlan> {
                                   );
                                 },
                               ),
-                              // Center(
-                              //   child: Container(
-                              //     margin: EdgeInsets.only(top: 20),
-                              //     height: 300,
-                              //     width: MediaQuery.of(context).size.width,
-                              //     decoration: BoxDecoration(
-                              //       color: Colors.white,
-                              //       boxShadow: [
-                              //         BoxShadow(
-                              //           color: Colors.grey.withOpacity(0.5),
-                              //           spreadRadius: 5,
-                              //           blurRadius: 7,
-                              //           offset: Offset(0, 3),
-                              //         ),
-                              //       ],
-                              //     ),
-                              //     child: Visibility(
-                              //       visible: widget.switchvalue,
-                              //       child: downloadPlan(),
-                              //       replacement: cameraPlan(),
-                              //     ),
-                              //   ),
-                              // ),
+                              Center(
+                                child: Container(
+                                  margin: EdgeInsets.only(top: 20),
+                                  height: 300,
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 5,
+                                        blurRadius: 7,
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Visibility(
+                                    visible: widget.switchvalue,
+                                    child: downloadPlan(),
+                                    replacement: cameraPlan(),
+                                  ),
+                                ),
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [

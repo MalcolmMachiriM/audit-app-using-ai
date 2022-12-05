@@ -9,6 +9,8 @@ import 'dart:math' as math;
 
 import 'package:provider/provider.dart';
 
+import '../../providers/app_state.dart';
+
 class BindingBox extends StatelessWidget {
   final List<dynamic> results;
   final int previewH;
@@ -221,35 +223,30 @@ class BindingBox extends StatelessWidget {
                     }),
               ),
               Container(
-                  width: 120,
-                  height: 45,
-                  child: TextButton(
-                    onPressed: () {
-                      Provider.of<Project>(context, listen: false).addInventory(
-                          Items(
-                              itemName: 'specs', description: 'blue', count: 1),
-                          index);
-                      Navigator.of(context).pop(this.context);
-                    },
-                    child: Text('Submit'),
-                  )
-                  // DefaultFlexButton(
-                  //   displayText: 'SUBMIT',
-                  //   fillcolor: true,
-                  //   press: () {
-                  //     // var inventory =
-                  //     //     Provider.of<AppState>(context, listen: false);
-                  //     // inventory.appendInventory(
-                  //     //     new Inventory(name: reConfidence),
-                  //     //     Provider.of<AppState>(context, listen: false).index);
-                  //     // Navigator.of(context).pop();
-                  //     Provider.of<Project>(context, listen: false).addInventory(
-                  //         Items(itemName: 'specs', description: 'blue', count: 1),
-                  //         index);
-                  //     Navigator.of(context).pop();
-                  //   },
-                  // ),
-                  )
+                width: 120,
+                height: 45,
+                child: DefaultFlexButton(
+                  displayText: 'SUBMIT',
+                  fillcolor: true,
+                  press: () {
+                    // var inventory =
+                    //     Provider.of<AppState>(context, listen: false);
+                    // inventory.appendInventory(new Inventory(name: reConfidence),
+                    //     Provider.of<AppState>(context, listen: false).index);
+                    // Navigator.of(context).pop();
+                    Provider.of<Project>(context, listen: false)
+                        .addInventory(
+                            Items(
+                                itemName: reConfidence,
+                                description: 'blue',
+                                count: 1),
+                            index)
+                        .then(
+                          Navigator.of(context).pop(),
+                        );
+                  },
+                ),
+              )
             ],
           ),
         ],

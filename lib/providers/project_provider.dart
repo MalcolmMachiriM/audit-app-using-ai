@@ -53,7 +53,7 @@ class Project with ChangeNotifier {
     notifyListeners();
   }
 
-  void addInventory(Items items, int index) {
+  addInventory(Items items, int index) {
     if (sections[index].inventory == null) {
       sections[index].inventory = Inventory(items: []);
     }

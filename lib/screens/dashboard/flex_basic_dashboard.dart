@@ -215,7 +215,10 @@ class _FlexBasicDashboardState extends State<FlexBasicDashboard> {
     return _recentAudits
         .map(
           (assessmentModel) => FlexBasicCard(
-            morePress: () => {print("more pressed")},
+            morePress: () => {
+              Navigator.of(context)
+                  .pushNamed(RoutingConstants.flexCameraDetection)
+            },
             editPress: () {
               Provider.of<Project>(context, listen: false)
                   .readSelectedProject(assessmentModel);
@@ -268,7 +271,7 @@ class _FlexBasicDashboardState extends State<FlexBasicDashboard> {
             },
             icon: Icons.folder,
             hasBadge: false,
-            title: assessmentModel.description ?? "blessing",
+            title: assessmentModel.description ?? "Mali",
           ),
         )
         .toList();
