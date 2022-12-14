@@ -343,12 +343,14 @@ class _FlexCameraDetectionState extends State<FlexCameraDetection> {
                                   Transform.scale(
                                     scale: 0.75,
                                     child: DefaultFlexOutlinedButton(
-                                      displayText: 'SAVE & PAUSE',
+                                      displayText: 'Add Annotations',
                                       fillcolor: false,
                                       press: () {
                                         Provider.of<Project>(context,
                                                 listen: false)
                                             .saveProject(model);
+                                        Navigator.of(context)
+                                            .pushNamed(RoutingConstants.draw);
                                       },
                                     ),
                                   ),

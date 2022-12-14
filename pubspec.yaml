@@ -49,8 +49,8 @@ dependencies:
     #image_gallery_saver: ^1.7.0
 
     toast: ^0.1.5
-    geolocator: ^8.2.0
-    device_info_plus: ^3.2.2
+    geolocator: 
+    device_info_plus: 
     flutter_svg: ^1.0.3
     flutter_slidable:
     ffi: ^1.1.2

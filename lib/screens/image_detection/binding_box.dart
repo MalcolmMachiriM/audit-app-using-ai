@@ -229,20 +229,6 @@ class _BindingBoxState extends State<BindingBox> {
                       Navigator.pop(this.widget.context);
                     }),
               ),
-              TextButton(
-                  onPressed: () {
-                    Provider.of<Project>(widget.context, listen: false)
-                        .addInventory(
-                            Items(
-                                itemName: reConfidence,
-                                description: 'blue',
-                                count: 1),
-                            index)
-                        .then(
-                          Navigator.of(widget.context).pop(),
-                        );
-                  },
-                  child: Text('Submit')),
               Container(
                 width: 120,
                 height: 45,
@@ -255,6 +241,9 @@ class _BindingBoxState extends State<BindingBox> {
                     // inventory.appendInventory(new Inventory(name: reConfidence),
                     //     Provider.of<AppState>(context, listen: false).index);
                     // Navigator.of(context).pop();
+                    // Consumer<Project>(
+                    //     builder: ((context, project, child) =>
+                    // Items(itemName: reConfidence, description: blue)));
                     Provider.of<Project>(widget.context, listen: false)
                         .addInventory(
                             Items(

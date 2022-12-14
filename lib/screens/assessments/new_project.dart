@@ -65,27 +65,27 @@ class _BuildNewProjectState extends State<BuildNewProject> {
                   labelText: 'Project Info',
                   controller: projectInfo,
                   context: context),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //   children: [
-              //     Text('Do you want to add floor plan?'),
-              //     SizedBox(
-              //       width: 20,
-              //     ),
-              //     Transform.scale(
-              //       scale: 0.6,
-              //       child: CupertinoSwitch(
-              //         activeColor: Theme.of(context).primaryColor,
-              //         value: _switchValue,
-              //         onChanged: (bool value) {
-              //           setState(() {
-              //             _switchValue = value;
-              //           });
-              //         },
-              //       ),
-              //     ),
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Do you want to add floor plan?'),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Transform.scale(
+                    scale: 0.6,
+                    child: CupertinoSwitch(
+                      activeColor: Theme.of(context).primaryColor,
+                      value: _switchValue,
+                      onChanged: (bool value) {
+                        setState(() {
+                          _switchValue = value;
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(
                 height: 20,
               ),
@@ -135,8 +135,8 @@ class _BuildNewProjectState extends State<BuildNewProject> {
                                 ),
                               );
 
-                              Navigator.pushNamed(context,
-                                  RoutingConstants.flexCameraDetection);
+                              // Navigator.pushNamed(context,
+                              //     RoutingConstants.flexCameraDetection);
                             } on Exception catch (e) {
                               EasyLoading.showError(e.toString());
                             }

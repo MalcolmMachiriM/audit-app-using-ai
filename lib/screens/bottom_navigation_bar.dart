@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flex/models/assessment_template_model.dart';
 import 'package:flex/screens/dashboard/flex_basic_dashboard.dart';
+import 'package:flex/screens/image_detection/capturing_metadata/example_get_metadata.dart';
 import 'package:flex/screens/profile/profile.dart';
 import 'package:flex/screens/settings/settings.dart';
 import 'package:flex/providers/app_state.dart';
@@ -23,7 +24,7 @@ class HomeState extends State<Home> {
 
   final List<Widget> screen = [
     FlexBasicDashboard(),
-    Subscriptions(),
+    GetMetaData(),
     Settings(),
     Profile(),
   ];
@@ -130,7 +131,7 @@ class HomeState extends State<Home> {
                     navigationButton(
                         'Home', Icons.layers_outlined, FlexBasicDashboard(), 1),
                     navigationButton(
-                        'Annotations', Icons.settings, Subscriptions(), 2),
+                        'Check Location', Icons.map, GetMetaData(), 2),
                   ],
                 ),
                 Row(

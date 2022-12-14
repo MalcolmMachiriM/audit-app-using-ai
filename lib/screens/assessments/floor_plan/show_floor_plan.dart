@@ -92,7 +92,7 @@ class _ShowFloorPlanState extends State<ShowFloorPlan> {
 
   downloadPlan() {
     return Stack(children: [
-      downloadImg = Image.asset('images/bg1.jpg'),
+      downloadImg = Image.asset('images/floorplan.png'),
       FlexDraggableMarker(),
     ]);
   }
