@@ -37,10 +37,9 @@ class _DrawState extends State<Draw> {
   var _strokeColor = Colors.purpleAccent;
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback(
-        (_) => null);
-        // replace null with this 
-        // ImageAnnotationController().save(repaintBoundaryKey)
+    WidgetsBinding.instance.addPostFrameCallback((_) => null);
+    // replace null with this
+    // ImageAnnotationController().save(repaintBoundaryKey)
     super.initState();
   }
 
@@ -71,11 +70,12 @@ class _DrawState extends State<Draw> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Icon(Icons.person_outline),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Icon(Icons.search),
+            child: IconButton(
+              icon: Icon(Icons.check),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
           ),
         ],
       ),

@@ -265,8 +265,8 @@ class _ShowFloorPlanState extends State<ShowFloorPlan> {
                                   ),
                                   child: Visibility(
                                     visible: widget.switchvalue,
-                                    child: downloadPlan(),
-                                    replacement: cameraPlan(),
+                                    child: cameraPlan(),
+                                    replacement: downloadPlan(),
                                   ),
                                 ),
                               ),

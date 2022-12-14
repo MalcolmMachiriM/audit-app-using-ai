@@ -103,12 +103,13 @@ class _FlexCameraDetectionState extends State<FlexCameraDetection> {
                 Transform.scale(
                   scale: 0.75,
                   child: DefaultFlexOutlinedButton(
-                    displayText: 'SAVE & PAUSE',
+                    displayText: 'ADD ANNOTATIONS',
                     fillcolor: false,
                     press: () {
                       // EasyLoading.show();
                       Provider.of<Project>(context, listen: false)
                           .saveProject(model);
+                      Navigator.of(context).pushNamed(RoutingConstants.draw);
                       // EasyLoading.dismiss();
                     },
                   ),
@@ -121,12 +122,12 @@ class _FlexCameraDetectionState extends State<FlexCameraDetection> {
                       height: 40,
                       width: 100,
                       child: DefaultFlexButton(
-                        displayText: 'CONTINUE',
+                        displayText: 'Publish',
                         fillcolor: true,
                         press: () {
                           EasyLoading.show();
                           Navigator.pushNamed(
-                              context, RoutingConstants.flexCameraDetection);
+                              context, RoutingConstants.flexDashboard);
                           EasyLoading.dismiss();
                         },
                       ),
