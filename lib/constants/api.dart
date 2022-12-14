@@ -1,6 +1,6 @@
 class ApiConnect {
   // static const baseUrl = 'http://ec2-13-244-138-73.af-south-1.compute.amazonaws.com/';
-  static const baseUrl = 'http://192.168.40.224:8000/';
+  static const baseUrl = 'http://127.0.0.1:8000/';
   static const authTokenUrl = baseUrl + 'api-token-auth/';
   static const acceptType = 'application/json';
   static const contentType = 'application/json';
@@ -9,17 +9,17 @@ class ApiConnect {
 
   static var url = Uri(
     scheme: 'http',
-    host: '192.168.40.224:8000/',
+    host: 'http://127.0.0.1:8000/',
     path: 'flexio/assessments/',
   );
   static var url1 = Uri(
     scheme: 'http',
-    host: '192.168.40.224:8000/',
+    host: 'http://127.0.0.1:8000/',
     path: 'flexio/assessments/1/',
   );
   static var url2 = Uri(
     scheme: 'http',
-    host: '192.168.40.224:8000/',
+    host: 'http://127.0.0.1:8000/',
     path: 'flexio/assessments/2/',
   );
 }

@@ -130,7 +130,7 @@ class HomeState extends State<Home> {
                     navigationButton(
                         'Home', Icons.layers_outlined, FlexBasicDashboard(), 1),
                     navigationButton(
-                        'Subscriptions', Icons.support, Subscriptions(), 2),
+                        'Annotations', Icons.settings, Subscriptions(), 2),
                   ],
                 ),
                 Row(

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flex/screens/authentication/authentication.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:provider/provider.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class LoginSignupScreen extends StatefulWidget {
   @override
@@ -19,6 +20,8 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
   final username = TextEditingController();
   final password = TextEditingController();
   var _futureLogin;
+  var requiredValidator =
+      RequiredValidator(errorText: 'This field cannot be empty');
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                 height: 50,
                 width: 80,
                 child: Text(
-                  'Audit app using AI',
+                  ' ML based Audit app ',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 // Image.asset('images/flex_logo.png'),
@@ -106,8 +109,10 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 10),
-          buildTextField("FlexUser", 'Username', false, true, username),
-          buildTextField("*********", 'Password', true, false, password),
+          buildTextField(
+              "FlexUser", 'Username', false, true, username, requiredValidator),
+          buildTextField("*********", 'Password', true, false, password,
+              requiredValidator),
         ],
       ),
     );
@@ -167,14 +172,11 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     Provider.of<AppState>(context, listen: false).getRecentAudits();
   }
 
-  login()
-  // async
-  {
-    // await
+  Future login() async {
     EasyLoading.show(
       status: 'loading...',
     );
-    if (username.text != 'malcolm@gmail.com' || password.text != '12345678') {
+    if (username.text != 'malcolm@gmail.com' || password.text != 'T!n0kund@') {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         backgroundColor: Colors.red,
         content: Text("Credentials wrong"),
@@ -182,12 +184,12 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       EasyLoading.dismiss();
     } else {
       // _futureLogin =
-      // await AuthenticationController().logIn(username.text, password.text);
+      //     await AuthenticationController().logIn(username.text, password.text);
 
       // if (!_futureLogin) {
-      //   await EasyLoading.showError('Invalid', duration: Duration(seconds: 2));
+      //   EasyLoading.showError('Invalid', duration: Duration(seconds: 2));
       // } else {
-      //   await EasyLoading.showSuccess("Success", duration: Duration(seconds: 2));
+      //   EasyLoading.showSuccess("Success", duration: Duration(seconds: 2));
       //   initStorage();
       //   Navigator.of(context).pushReplacementNamed(RoutingConstants.home);
       // }
@@ -198,11 +200,17 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     }
   }
 
-  Widget buildTextField(String hintText, String labelText, bool isPassword,
-      bool isEmail, TextEditingController controller) {
+  Widget buildTextField(
+      String hintText,
+      String labelText,
+      bool isPassword,
+      bool isEmail,
+      TextEditingController controller,
+      RequiredValidator validator) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
-      child: TextField(
+      child: TextFormField(
+        validator: validator,
         controller: controller,
         obscureText: isPassword,
         keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,

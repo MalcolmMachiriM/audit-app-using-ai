@@ -4,14 +4,14 @@ import 'package:flex/screens/components/flex_buttons.dart';
 import 'package:flex/screens/components/flex_switch.dart';
 import 'package:flex/themes/style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+// import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'dart:math' as math;
 
 import 'package:provider/provider.dart';
 
-import '../../providers/app_state.dart';
+// import '../../providers/app_state.dart';
 
-class BindingBox extends StatelessWidget {
+class BindingBox extends StatefulWidget {
   final List<dynamic> results;
   final int previewH;
   final int previewW;
@@ -27,31 +27,38 @@ class BindingBox extends StatelessWidget {
     this.screenW,
     this.context,
   );
+
+  @override
+  State<BindingBox> createState() => _BindingBoxState();
+}
+
+class _BindingBoxState extends State<BindingBox> {
   TextEditingController itemDescriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     List<Widget> _renderBox() {
-      return results.map((re) {
+      return widget.results.map((re) {
         var _x = re["rect"]["x"];
         var _w = re["rect"]["w"];
         var _y = re["rect"]["y"];
         var _h = re["rect"]["h"];
         var scaleW, scaleH, x, y, w, h;
 
-        if (screenH / screenW > previewH / previewW) {
-          scaleW = screenH / previewH * previewW;
-          scaleH = screenH;
-          var difW = (scaleW - screenW) / scaleW;
+        if (widget.screenH / widget.screenW >
+            widget.previewH / widget.previewW) {
+          scaleW = widget.screenH / widget.previewH * widget.previewW;
+          scaleH = widget.screenH;
+          var difW = (scaleW - widget.screenW) / scaleW;
           x = (_x - difW / 2) * scaleW;
           w = _w * scaleW;
           if (_x < difW / 2) w -= (difW / 2 - _x) * scaleW;
           y = _y * scaleH;
           h = _h * scaleH;
         } else {
-          scaleH = screenW / previewW * previewH;
-          scaleW = screenW;
-          var difH = (scaleH - screenH) / scaleH;
+          scaleH = widget.screenW / widget.previewW * widget.previewH;
+          scaleW = widget.screenW;
+          var difH = (scaleH - widget.screenH) / scaleH;
           x = _x * scaleW;
           w = _w * scaleW;
           y = (_y - difH / 2) * scaleH;
@@ -113,7 +120,7 @@ class BindingBox extends StatelessWidget {
       {String hintText, String labelText, TextEditingController controller}) {
     return AnimatedPadding(
       padding: EdgeInsets.only(
-          bottom: MediaQuery.of(this.context).viewInsets.bottom),
+          bottom: MediaQuery.of(this.widget.context).viewInsets.bottom),
       duration: Duration(milliseconds: 10),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 15.0),
@@ -149,7 +156,7 @@ class BindingBox extends StatelessWidget {
     // Inventory inventory;
 
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(widget.context).size.width,
       decoration: BoxDecoration(),
       padding: EdgeInsets.all(20),
       child: Column(
@@ -166,9 +173,9 @@ class BindingBox extends StatelessWidget {
                 ),
               ),
               IconButton(
-                color: Theme.of(this.context).primaryColor,
+                color: Theme.of(this.widget.context).primaryColor,
                 onPressed: () {
-                  Navigator.pop(this.context);
+                  Navigator.pop(this.widget.context);
                 },
                 icon: Icon(Icons.cancel_outlined),
               ),
@@ -210,7 +217,7 @@ class BindingBox extends StatelessWidget {
             height: 20,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 width: 120,
@@ -219,9 +226,23 @@ class BindingBox extends StatelessWidget {
                     displayText: 'CANCEL',
                     fillcolor: false,
                     press: () {
-                      Navigator.pop(this.context);
+                      Navigator.pop(this.widget.context);
                     }),
               ),
+              TextButton(
+                  onPressed: () {
+                    Provider.of<Project>(widget.context, listen: false)
+                        .addInventory(
+                            Items(
+                                itemName: reConfidence,
+                                description: 'blue',
+                                count: 1),
+                            index)
+                        .then(
+                          Navigator.of(widget.context).pop(),
+                        );
+                  },
+                  child: Text('Submit')),
               Container(
                 width: 120,
                 height: 45,
@@ -234,7 +255,7 @@ class BindingBox extends StatelessWidget {
                     // inventory.appendInventory(new Inventory(name: reConfidence),
                     //     Provider.of<AppState>(context, listen: false).index);
                     // Navigator.of(context).pop();
-                    Provider.of<Project>(context, listen: false)
+                    Provider.of<Project>(widget.context, listen: false)
                         .addInventory(
                             Items(
                                 itemName: reConfidence,
@@ -242,7 +263,7 @@ class BindingBox extends StatelessWidget {
                                 count: 1),
                             index)
                         .then(
-                          Navigator.of(context).pop(),
+                          Navigator.of(widget.context).pop(),
                         );
                   },
                 ),
