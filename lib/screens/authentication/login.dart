@@ -174,7 +174,9 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     EasyLoading.show(
       status: 'loading...',
     );
-    if (username.text != 'malcolm@gmail.com' || password.text != '12345678') {
+    if ((username.text != 'malcolm@gmail.com' &&
+            password.text != 'T!n0kund@') ||
+        (username.text != 'malik_t.g' && password.text != 'T!n0kund@')) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         backgroundColor: Colors.red,
         content: Text("Credentials wrong"),
