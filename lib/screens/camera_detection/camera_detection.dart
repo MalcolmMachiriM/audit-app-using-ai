@@ -318,64 +318,64 @@ class _FlexCameraDetectionState extends State<FlexCameraDetection> {
                             SizedBox(
                               height: 20,
                             ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 10, bottom: 10),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Transform.scale(
-                                    scale: 0.75,
-                                    child: DefaultFlexOutlinedButton(
-                                      displayText: 'SAVE & END',
-                                      fillcolor: false,
-                                      press: () {
-                                        Provider.of<Project>(context,
-                                                listen: false)
-                                            .saveProject(model);
-                                        EasyLoading.show(status: 'Loading..');
-                                        Navigator.pushNamed(
-                                            context, RoutingConstants.home);
-                                        EasyLoading.dismiss();
-                                      },
-                                    ),
-                                  ),
-                                  Transform.scale(
-                                    scale: 0.75,
-                                    child: DefaultFlexOutlinedButton(
-                                      displayText: 'Add Annotations',
-                                      fillcolor: false,
-                                      press: () {
-                                        Provider.of<Project>(context,
-                                                listen: false)
-                                            .saveProject(model);
-                                        Navigator.of(context)
-                                            .pushNamed(RoutingConstants.draw);
-                                      },
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 40,
-                                    width: 110,
-                                    child: DefaultFlexButton(
-                                      displayText: 'PUBLISH',
-                                      fillcolor: true,
-                                      press: () {
-                                        if (_formKey.currentState.validate()) {
-                                          _formKey.currentState.save();
-                                          _rawSection.toSet().toList();
-                                          Provider.of<Project>(context,
-                                                  listen: false)
-                                              .sections[currentIndex]
-                                              .fields = _rawSection;
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            // Padding(
+                            //   padding:
+                            //       const EdgeInsets.only(top: 10, bottom: 10),
+                            //   child: Row(
+                            //     mainAxisAlignment:
+                            //         MainAxisAlignment.spaceBetween,
+                            //     children: [
+                            //       Transform.scale(
+                            //         scale: 0.75,
+                            //         child: DefaultFlexOutlinedButton(
+                            //           displayText: 'SAVE & END',
+                            //           fillcolor: false,
+                            //           press: () {
+                            //             Provider.of<Project>(context,
+                            //                     listen: false)
+                            //                 .saveProject(model);
+                            //             EasyLoading.show(status: 'Loading..');
+                            //             Navigator.pushNamed(
+                            //                 context, RoutingConstants.home);
+                            //             EasyLoading.dismiss();
+                            //           },
+                            //         ),
+                            //       ),
+                            //       Transform.scale(
+                            //         scale: 0.75,
+                            //         child: DefaultFlexOutlinedButton(
+                            //           displayText: 'Add Annotations',
+                            //           fillcolor: false,
+                            //           press: () {
+                            //             Provider.of<Project>(context,
+                            //                     listen: false)
+                            //                 .saveProject(model);
+                            //             Navigator.of(context)
+                            //                 .pushNamed(RoutingConstants.draw);
+                            //           },
+                            //         ),
+                            //       ),
+                            //       Container(
+                            //         height: 40,
+                            //         width: 110,
+                            //         child: DefaultFlexButton(
+                            //           displayText: 'PUBLISH',
+                            //           fillcolor: true,
+                            //           press: () {
+                            //             if (_formKey.currentState.validate()) {
+                            //               _formKey.currentState.save();
+                            //               _rawSection.toSet().toList();
+                            //               Provider.of<Project>(context,
+                            //                       listen: false)
+                            //                   .sections[currentIndex]
+                            //                   .fields = _rawSection;
+                            //             }
+                            //           },
+                            //         ),
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),

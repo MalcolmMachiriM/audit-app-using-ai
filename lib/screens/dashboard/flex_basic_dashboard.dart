@@ -183,7 +183,7 @@ class _FlexBasicDashboardState extends State<FlexBasicDashboard> {
                         },
                         icon: Icons.folder,
                         hasBadge: false,
-                        title: "Dunkled Simrac",
+                        title: "No open audits",
                       ),
                     ],
                   ),
